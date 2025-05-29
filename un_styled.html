@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Login Form</title>
+<script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+  body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: row;
+  }
+  .login-container {
+    background: #ffffffdd;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    width: 360px;
+    transition: box-shadow 0.3s ease;
+    z-index: 10;
+  }
+  .login-container:hover {
+    box-shadow: 0 12px 36px rgba(0,0,0,0.3);
+  }
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 2rem;
+  }
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #555;
+  }
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 25px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    border-color: #2575fc;
+    box-shadow: 0 0 8px #2575fcaa;
+    outline: none;
+  }
+  input[type="submit"] {
+    width: 100%;
+    background: linear-gradient(90deg, #2575fc, #6a11cb);
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px #2575fcaa;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+  input[type="submit"]:hover {
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    box-shadow: 0 6px 16px #6a11cbaa;
+  }
+  .forgot-password {
+    text-align: right;
+    font-size: 0.9rem;
+  }
+  .forgot-password a {
+    color: #2575fc;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .forgot-password a:hover {
+    text-decoration: underline;
+  }
+  #three-container {
+    width: 400px;
+    height: 400px;
+    margin-left: 40px;
+  }
+</style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Log In</h2>
+    <form action="#" method="POST">
+      <label for="username">Username or Email</label>
+      <input type="text" id="username" name="username" required />
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required />
+      <input type="submit" value="Log In" />
+      <div class="forgot-password">
+        <a href="#">Forgot password?</a>
+      </div>
+    </form>
+  </div>
+  <div id="three-container"></div>
+  <script>
+    // Set up scene, camera, renderer
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, 400 / 400, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(400, 400);
+    document.getElementById('three-container').appendChild(renderer.domElement);
+
+    // Create a cube
+    const geometry = new THREE.BoxGeometry();
+    const material = new THREE.MeshStandardMaterial({ color: 0x2575fc });
+    const cube = new THREE.Mesh(geometry, material);
+    scene.add(cube);
+
+    // Add light
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+    scene.add(ambientLight);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    directionalLight.position.set(5, 5, 5);
+    scene.add(directionalLight);
+
+    camera.position.z = 5;
+
+    // Animation loop
+    function animate() {
+      requestAnimationFrame(animate);
+      cube.rotation.x += 0.01;
+      cube.rotation.y += 0.01;
+      renderer.render(scene, camera);
+    }
+    animate();
+  </script>
+</body>
+</html>

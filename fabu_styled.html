@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kira Clinic</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f8;
+    color: #333;
+    margin: 0;
+    padding: 0 20px;
+    perspective: 1200px;
+    perspective-origin: center top;
+  }
+  .container {
+    transform-style: preserve-3d;
+  }
+  header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #0077b6;
+    color: white;
+    transform: translateZ(30px) rotateX(5deg);
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+  }
+  nav {
+    margin: 10px 0 20px;
+    text-align: center;
+    background-color: #023e8a;
+    padding: 10px 0;
+    border-radius: 5px;
+    transform: translateZ(20px) rotateX(3deg);
+  }
+  nav a {
+    margin: 0 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  }
+  nav a:hover {
+    background-color: #0077b6;
+    color: white;
+    text-decoration: none;
+    transform: translateZ(15px) rotateX(10deg);
+  }
+  img.main-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 20px;
+    border-radius: 8px;
+  }
+  section {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    transform-style: preserve-3d;
+    transform: translateZ(10px);
+    transition: transform 0.3s ease;
+  }
+  section:hover {
+    transform: translateZ(40px) rotateX(10deg);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  }
+  h2, h3, h5 {
+    text-align: center;
+    color: #023e8a;
+  }
+  h5 {
+    margin-bottom: 10px;
+  }
+  label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+  }
+  input[type="text"],
+  input[type="number"] {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  input[type="submit"] {
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    margin: 10px 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+  }
+  input[type="submit"]:hover {
+    background-color: #023e8a;
+    transform: translateZ(20px) rotateX(15deg);
+  }
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: center;
+  }
+  ul li {
+    margin: 5px 0;
+  }
+  footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #0077b6;
+    color: white;
+    font-size: 0.9em;
+    border-radius: 0 0 8px 8px;
+    transform: translateZ(15px) rotateX(5deg);
+  }
+  .contact-form label {
+    margin-top: 15px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>Kira Clinic</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About Us</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+    <a href="#">Help</a>
+  </nav>
+</header>
+  <section>
+  <h2>Contact Us</h2>
+  <form class="contact-form">
+    <label for="phone">Phone</label>
+    <input type="number" id="phone" name="phone" value="0734639100" />
+
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email" value="umuhire fabrice@500Gmeil.com" />
+
+    <label for="location">Location</label>
+    <input type="text" id="location" name="location" value="Rutsiro District" />
+  </form>
+
+<section>
+  <h3>Welcome to Kira Clinic</h3>
+  <div style="text-align:center; margin-top: 15px;">
+    <input type="submit" name="next" value="Next" />
+    <input type="submit" name="back" value="Back" />
+  </div>
+<section>
+  <h2>Our Services</h2>
+  <h3>Treatment for Illness</h3>
+  <h3>Basic Laboratory</h3>
+  <h4 style="text-align:center;"><b>Vaccination for All</b></h4>
+</section>
+<section>
+  <label>KIRA CLINIC</label>
+  <ul>
+    <li>Rwanda, Rutsiro District</li>
+    <li>Phone: 0734639100</li>
+    <li>Email: umuhire fabrice@500Gmeil.com</li>
+  </ul>
+</section>
+
+<section>
+  <label>Our Services</label>
+  <ul>
+    <li>Consultation</li>
+    <li>Hospital</li>
+    <li>District</li>
+  </ul>
+</section>
+<footer>
+  <p>© Kira Clinic</p>
+</footer>
+</div>
+</body>
+</html>
